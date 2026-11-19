@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="atm-container">
+    <header>
+        <h1>🏦 ATM BANK</h1>
+        <p>WELCOME TO ATM SERVICES</p>
+    </header>
+
+    <main>
+        <section id="login-section">
+            <h2>Enter Your PIN</h2>
+            <input type="password" id="pin" maxlength="4"
+                   placeholder="Enter 4 Digit PIN">
+            <button onclick="login()">LOGIN</button>
+            <p id="login-message"></p>
+            <!--<p>Default PIN: 1212</p>-->
+        </section>
+
+        <section id="menu-section" hidden>
+            <h2>ATM SERVICES</h2>
+            <p id="welcome"></p>
+            <button onclick="checkBalance()">Check Balance</button>
+            <button onclick="showTransaction('withdraw')">Withdraw Cash</button>
+            <button onclick="showTransaction('deposit')">Deposit Cash</button>
+            <button onclick="statement()">Mini Statement</button>
+            <button onclick="showChangePin()">Change PIN</button>
+            <button onclick="logout()">Logout</button>
+            <div id="output"></div>
+        </section>
+
+        <section id="transaction-section" hidden>
+            <h2 id="transaction-title"></h2>
+            <input type="number" id="amount" placeholder="Enter Amount">
+            <button onclick="submitTransaction()">Submit</button>
+            <button onclick="backToMenu()">Back</button>
+        </section>
+
+        <section id="pin-section" hidden>
+            <h2>Change PIN</h2>
+            <input type="password" id="oldPin" maxlength="4" placeholder="Old PIN">
+            <input type="password" id="newPin" maxlength="4" placeholder="New PIN">
+            <button onclick="changePin()">Change PIN</button>
+            <button onclick="backToMenu()">Back</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Secure ATM Banking System</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
